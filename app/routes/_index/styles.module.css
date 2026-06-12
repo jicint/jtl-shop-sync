@@ -143,25 +143,6 @@
   font-size: 1.8rem;
 }
 
-.storyCard {
-  background: linear-gradient(135deg, #fff7ed 0%, #eff6ff 100%);
-  border: 1px solid #e2e8f0;
-  border-radius: 20px;
-  padding: 1.2rem;
-}
-
-.storyTitle {
-  font-weight: 800;
-  margin-bottom: 0.75rem;
-}
-
-.storyList {
-  margin: 0;
-  padding-left: 1.1rem;
-  color: #334155;
-  line-height: 1.75;
-}
-
 .section {
   max-width: 1180px;
   margin: 1.5rem auto 0 auto;

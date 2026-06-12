@@ -153,15 +153,6 @@ export default function PublicIndex() {
               <strong>{overview.imageCount}</strong>
             </div>
           </div>
-
-          <div className={styles.storyCard}>
-            <div className={styles.storyTitle}>Was der Interviewer hier sehen soll</div>
-            <ul className={styles.storyList}>
-              <li>Mehrere Datenquellen: JSON, lokale DB oder echte JTL DB</li>
-              <li>Elternprodukte mit Kindvarianten und Farblogik</li>
-              <li>Eine oeffentliche Demoansicht plus embedded Shopify-App</li>
-            </ul>
-          </div>
         </div>
       </section>
 
@@ -206,11 +197,14 @@ export default function PublicIndex() {
             >
               <img
                 className={styles.productImage}
-                src={getVariantPreview(
-                  product.productType,
-                  product.title,
-                  product.mainVariant?.attributes || {},
-                )}
+                src={
+                  product.mainVariant?.image ||
+                  getVariantPreview(
+                    product.productType,
+                    product.title,
+                    product.mainVariant?.attributes || {},
+                  )
+                }
                 alt={product.title}
               />
               <div className={styles.productMeta}>{product.category}</div>
