@@ -198,7 +198,12 @@ export default function PublicIndex() {
 
         <div className={styles.productGrid}>
           {featuredProducts.map((product) => (
-            <article key={product.parentId || product.title} className={styles.productCard}>
+            <Link
+              key={product.parentId || product.title}
+              to={`/demo/product/${encodeURIComponent(product.parentId)}`}
+              className={styles.productCard}
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
               <img
                 className={styles.productImage}
                 src={getVariantPreview(
@@ -229,7 +234,7 @@ export default function PublicIndex() {
                     </div>
                   ))}
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </section>
