@@ -148,11 +148,9 @@ function buildVariantPreview(productType, title, values, viewLabel = "Front") {
 export default function PublicVariantDetail() {
   const variant = useLoaderData();
   const label = getVariantDisplay(variant.attributes);
-  const realGallery = Array.from(new Set([variant.image, ...(variant.gallery || [])].filter(Boolean)));
-  const fallbackGallery = ["Front", "Side", "Detail"].map((view) =>
+  const gallery = ["Front", "Side", "Detail", "Studio"].map((view) =>
     buildVariantPreview(variant.productType, variant.title, variant.attributes, view),
   );
-  const gallery = (realGallery.length > 0 ? realGallery : fallbackGallery).slice(0, 4);
 
   return (
     <main style={{ minHeight: "100vh", background: "#f8fafc", padding: "2rem" }}>
