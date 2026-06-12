@@ -1,4 +1,4 @@
-import { redirect, Form, Link, useLoaderData } from "react-router";
+import { redirect, Link, useLoaderData } from "react-router";
 import { getJtlSyncOverview } from "../../jtlSync.server";
 import styles from "./styles.module.css";
 
@@ -233,30 +233,6 @@ export default function PublicIndex() {
         </div>
       </section>
 
-      <section className={styles.section}>
-        <div className={styles.sectionHeader}>
-          <div>
-            <div className={styles.sectionEyebrow}>Shopify Zugang</div>
-            <h2>Embedded App Login</h2>
-          </div>
-        </div>
-
-        <div className={styles.loginPanel}>
-          <p>
-            Die oeffentliche Startseite ist fuer Interviews gedacht. Der Shopify-embedded Bereich
-            unter <code>/app</code> braucht weiterhin eine Shop-Installation und Authentifizierung.
-          </p>
-          <Form className={styles.form} method="post" action="/auth/login">
-            <label className={styles.label}>
-              <span>Shop domain</span>
-              <input className={styles.input} type="text" name="shop" placeholder="your-store.myshopify.com" />
-            </label>
-            <button className={styles.button} type="submit">
-              In Shopify anmelden
-            </button>
-          </Form>
-        </div>
-      </section>
     </main>
   );
 }
