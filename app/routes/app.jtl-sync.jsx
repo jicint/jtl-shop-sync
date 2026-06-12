@@ -185,12 +185,9 @@ export default function JtlSync() {
         {hasProducts ? (
           <div style={{ display: "grid", gap: "1rem" }}>
             {overview.sourceProducts.map((product) => (
-              <Link
+              <div
                 key={product.parentId || product.title}
-                to={`/app/product/${encodeURIComponent(product.parentId)}`}
                 style={{
-                  textDecoration: "none",
-                  color: "inherit",
                   background: "#ffffff",
                   border: "1px solid #dfe3e8",
                   borderRadius: "14px",
@@ -200,21 +197,34 @@ export default function JtlSync() {
                   gridTemplateColumns: "220px minmax(0, 1fr)",
                 }}
               >
-                <img
-                  src={getVariantPreview(product.productType, product.title, product.mainVariant?.attributes || {})}
-                  alt={product.title}
+                <Link
+                  to={`/app/product/${encodeURIComponent(product.parentId)}`}
                   style={{
-                    width: "100%",
-                    height: "220px",
-                    borderRadius: "12px",
-                    display: "block",
-                    objectFit: "cover",
-                    background: "#e2e8f0",
+                    textDecoration: "none",
+                    color: "inherit",
                   }}
-                />
+                >
+                  <img
+                    src={getVariantPreview(product.productType, product.title, product.mainVariant?.attributes || {})}
+                    alt={product.title}
+                    style={{
+                      width: "100%",
+                      height: "220px",
+                      borderRadius: "12px",
+                      display: "block",
+                      objectFit: "cover",
+                      background: "#e2e8f0",
+                    }}
+                  />
+                </Link>
 
                 <div>
-                  <div style={{ fontWeight: 700, color: "#111827", fontSize: "1.05rem" }}>{product.title}</div>
+                  <Link
+                    to={`/app/product/${encodeURIComponent(product.parentId)}`}
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    <div style={{ fontWeight: 700, color: "#111827", fontSize: "1.05rem" }}>{product.title}</div>
+                  </Link>
                   <div style={{ color: "#6b7280", marginTop: "0.25rem" }}>{product.category}</div>
                   <p style={{ margin: "0.75rem 0 0 0", color: "#334155", lineHeight: 1.5 }}>
                     {product.description}
@@ -228,10 +238,12 @@ export default function JtlSync() {
                     {product.variantCount} weitere Farben
                   </div>
                   <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginTop: "0.9rem" }}>
-                    {product.variants.slice(0, 4).map((variant) => (
-                      <div
+                    {[product.mainVariant, ...product.variants].filter(Boolean).slice(0, 5).map((variant) => (
+                      <Link
                         key={variant.sku}
+                        to={`/app/variant/${encodeURIComponent(product.parentId)}/${encodeURIComponent(variant.sku)}`}
                         style={{
+                          textDecoration: "none",
                           background: "#f8fafc",
                           border: "1px solid #dbe2ea",
                           borderRadius: "999px",
@@ -241,12 +253,27 @@ export default function JtlSync() {
                         }}
                       >
                         {getVariantDisplay(variant.attributes)}
-                      </div>
+                      </Link>
                     ))}
                   </div>
-                  <div style={{ marginTop: "1rem", color: "#2563eb", fontWeight: 700 }}>Produkt oeffnen</div>
+                  <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginTop: "1rem" }}>
+                    <Link
+                      to={`/app/product/${encodeURIComponent(product.parentId)}`}
+                      style={{ color: "#2563eb", fontWeight: 700, textDecoration: "none" }}
+                    >
+                      Produkt oeffnen
+                    </Link>
+                    {product.mainVariant && (
+                      <Link
+                        to={`/app/variant/${encodeURIComponent(product.parentId)}/${encodeURIComponent(product.mainVariant.sku)}`}
+                        style={{ color: "#0f766e", fontWeight: 700, textDecoration: "none" }}
+                      >
+                        Hauptvariante oeffnen
+                      </Link>
+                    )}
+                  </div>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         ) : (
