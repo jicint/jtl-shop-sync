@@ -226,6 +226,13 @@ export default function PublicIndex() {
         </div>
       </section>
 
+      <section className={styles.section}>
+        <div className={styles.creditCard}>
+          <div className={styles.creditLabel}>Built by</div>
+          <div className={styles.creditText}>Jicin</div>
+        </div>
+      </section>
+
     </main>
   );
 }

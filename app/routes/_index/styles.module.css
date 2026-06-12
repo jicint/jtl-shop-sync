@@ -242,6 +242,30 @@
   margin-top: 1rem;
 }
 
+.creditCard {
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 20px;
+  padding: 1rem 1.2rem;
+  display: inline-grid;
+  gap: 0.2rem;
+}
+
+.creditLabel {
+  color: #64748b;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+
+.creditText {
+  color: #0f172a;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
 .form {
   display: flex;
   flex-wrap: wrap;
