@@ -25,8 +25,27 @@ function dataSourceLabel(value) {
   }[value] || value;
 }
 
+function translateColor(value) {
+  return {
+    White: "Weiss",
+    Black: "Schwarz",
+    Brown: "Braun",
+    Grey: "Grau",
+    Gray: "Grau",
+    Navy: "Marine",
+    Olive: "Oliv",
+    Red: "Rot",
+    Green: "Gruen",
+    Blue: "Blau",
+    Yellow: "Gelb",
+    Sand: "Sand",
+    Forest: "Waldgruen",
+    Tan: "Hellbraun",
+  }[value] || value;
+}
+
 function variantLabel(attributes = {}) {
-  return attributes.Color || attributes.Colour || "Variante";
+  return translateColor(attributes.Color || attributes.Colour || "Variante");
 }
 
 function getVariantSwatch(values) {
@@ -204,7 +223,7 @@ export default function PublicIndex() {
               <p>{product.description}</p>
               <div className={styles.productStats}>
                 <span>Hauptfarbe: {variantLabel(product.mainVariant?.attributes)}</span>
-                <span>{product.variantCount} weitere Farben</span>
+                <span>{product.additionalVariantCount} weitere Farben</span>
               </div>
               <div className={styles.variantList}>
                 {[product.mainVariant, ...product.variants]
