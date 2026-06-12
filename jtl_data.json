@@ -183,65 +183,6 @@
         },
         {
           "parent_product": {
-            "vater_id": "JTL-V-7001",
-            "title": "Leichter Performance Hoodie",
-            "product_type": "hoodie",
-            "description": "Ein leichter Kapuzenpullover fuer Alltag und Training mit glatter Aussenseite.",
-            "sku_prefix": "HOODIE-PERFORMANCE"
-          },
-          "child_variants": [
-            {
-              "kind_id": "JTL-K-7001",
-              "sku": "HOODIE-PERFORMANCE-BLUE",
-              "attributes": { "Color": "Blue" },
-              "price": 79.99,
-              "child_image": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=900&q=80",
-              "child_gallery": [
-                "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=1200&q=80",
-                "https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=1200&q=80",
-                "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=1200&q=80"
-              ]
-            },
-            {
-              "kind_id": "JTL-K-7002",
-              "sku": "HOODIE-PERFORMANCE-RED",
-              "attributes": { "Color": "Red" },
-              "price": 79.99,
-              "child_image": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=900&q=80",
-              "child_gallery": [
-                "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1200&q=80",
-                "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=1200&q=80",
-                "https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=1200&q=80"
-              ]
-            },
-            {
-              "kind_id": "JTL-K-7003",
-              "sku": "HOODIE-PERFORMANCE-FOREST",
-              "attributes": { "Color": "Forest" },
-              "price": 79.99,
-              "child_image": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80",
-              "child_gallery": [
-                "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80",
-                "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=1200&q=80",
-                "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1200&q=80"
-              ]
-            },
-            {
-              "kind_id": "JTL-K-7004",
-              "sku": "HOODIE-PERFORMANCE-GREY",
-              "attributes": { "Color": "Grey" },
-              "price": 79.99,
-              "child_image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80",
-              "child_gallery": [
-                "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80",
-                "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80",
-                "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=1200&q=80"
-              ]
-            }
-          ]
-        },
-        {
-          "parent_product": {
             "vater_id": "JTL-V-8001",
             "title": "Retro Court Sneaker",
             "product_type": "sneaker",
