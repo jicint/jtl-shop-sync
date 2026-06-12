@@ -128,9 +128,6 @@ export default function PublicIndex() {
             <a className={styles.primaryAction} href="#demo">
               Demo ansehen
             </a>
-            <a className={styles.secondaryAction} href="/app">
-              Embedded App oeffnen
-            </a>
           </div>
         </div>
 
@@ -171,10 +168,6 @@ export default function PublicIndex() {
           <div className={styles.stepCard}>
             <strong>2. Struktur verstehen</strong>
             <p>Jedes Hauptprodukt wird mit Varianten, Farben, Preisen und Bildern gruppiert.</p>
-          </div>
-          <div className={styles.stepCard}>
-            <strong>3. Shopify zeigen</strong>
-            <p>Die gleiche Datenstruktur wird in der embedded App fuer Sync, Vorschau und Admin genutzt.</p>
           </div>
         </div>
       </section>
