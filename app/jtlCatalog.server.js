@@ -1,8 +1,20 @@
 import fs from "fs";
+import path from "path";
 import prisma from "./db.server.js";
 
 function loadSampleCatalog() {
-  const rawData = fs.readFileSync(new URL("../jtl_data.json", import.meta.url), "utf8");
+  const candidatePaths = [
+    path.resolve(process.cwd(), "jtl_data.json"),
+    path.resolve(process.cwd(), "..", "jtl_data.json"),
+    path.resolve(process.cwd(), "..", "..", "jtl_data.json"),
+  ];
+
+  const catalogPath = candidatePaths.find((candidate) => fs.existsSync(candidate));
+  if (!catalogPath) {
+    throw new Error(`Could not find jtl_data.json. Tried: ${candidatePaths.join(", ")}`);
+  }
+
+  const rawData = fs.readFileSync(catalogPath, "utf8");
   return JSON.parse(rawData);
 }
 
