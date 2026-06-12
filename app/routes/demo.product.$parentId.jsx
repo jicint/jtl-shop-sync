@@ -1,13 +1,38 @@
 import { Link, useLoaderData } from "react-router";
-import { getJtlParentDetail } from "../jtlSync.server";
+import { loadJtlCatalog } from "../jtlCatalog.server.js";
 
 export const loader = async ({ params }) => {
-  const product = await getJtlParentDetail(params.parentId);
-  if (!product) {
-    throw new Response("Produkt nicht gefunden", { status: 404 });
+  const catalog = await loadJtlCatalog();
+  const categories = catalog?.categories || [];
+
+  for (const category of categories) {
+    for (const product of category.products || []) {
+      if ((product.parent_product?.vater_id || "") !== params.parentId) continue;
+
+      return {
+        category: category.title || "Default Category",
+        parentId: params.parentId,
+        title: product.parent_product?.title || "Untitled product",
+        productType: product.parent_product?.product_type || "",
+        description: product.parent_product?.description || "",
+        skuPrefix: product.parent_product?.sku_prefix || "",
+        mainVariant: product.child_variants?.[0]
+          ? {
+              sku: product.child_variants[0].sku,
+              price: product.child_variants[0].price,
+              attributes: product.child_variants[0].attributes || {},
+            }
+          : null,
+        variants: (product.child_variants || []).slice(1).map((variant) => ({
+          sku: variant.sku,
+          price: variant.price,
+          attributes: variant.attributes || {},
+        })),
+      };
+    }
   }
 
-  return product;
+  throw new Response("Produkt nicht gefunden", { status: 404 });
 };
 
 function translateColor(value) {
