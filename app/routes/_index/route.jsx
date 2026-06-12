@@ -119,7 +119,6 @@ export default function PublicIndex() {
           </p>
 
           <div className={styles.badges}>
-            <span className={styles.badge}>Datenquelle: {dataSourceLabel(overview.dataSource)}</span>
             <span className={styles.badge}>{overview.productCount} Produkte</span>
             <span className={styles.badge}>{overview.variantCount} Varianten</span>
           </div>
