@@ -202,6 +202,16 @@
   flex: 1 1 250px;
 }
 
+.productImage {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+  margin-bottom: 0.9rem;
+  background: #e2e8f0;
+}
+
 .productStats {
   margin-top: 1rem;
 }
@@ -214,6 +224,37 @@
   border: 1px solid #e2e8f0;
   color: #334155;
   font-size: 0.9rem;
+}
+
+.variantList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.variantChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.variantSwatch {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 999px;
+  background-color: #cbd5e1;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  flex: 0 0 auto;
 }
 
 .loginPanel {

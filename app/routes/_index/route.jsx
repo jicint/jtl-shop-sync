@@ -25,6 +25,10 @@ function dataSourceLabel(value) {
   }[value] || value;
 }
 
+function variantLabel(attributes = {}) {
+  return attributes.Color || attributes.Colour || "Variante";
+}
+
 export default function PublicIndex() {
   const { overview } = useLoaderData();
   const featuredProducts = overview.sourceProducts.slice(0, 4);
@@ -121,12 +125,33 @@ export default function PublicIndex() {
         <div className={styles.productGrid}>
           {featuredProducts.map((product) => (
             <article key={product.parentId || product.title} className={styles.productCard}>
+              {product.mainVariant?.image && (
+                <img
+                  className={styles.productImage}
+                  src={product.mainVariant.image}
+                  alt={product.title}
+                />
+              )}
               <div className={styles.productMeta}>{product.category}</div>
               <h3>{product.title}</h3>
               <p>{product.description}</p>
               <div className={styles.productStats}>
-                <span>Hauptfarbe: {product.mainVariant?.attributes?.Color || "Variante"}</span>
+                <span>Hauptfarbe: {variantLabel(product.mainVariant?.attributes)}</span>
                 <span>{product.variantCount} weitere Farben</span>
+              </div>
+              <div className={styles.variantList}>
+                {[product.mainVariant, ...product.variants]
+                  .filter(Boolean)
+                  .slice(0, 4)
+                  .map((variant) => (
+                    <div key={variant.sku} className={styles.variantChip}>
+                      <span
+                        className={styles.variantSwatch}
+                        style={{ backgroundImage: variant.image ? `url(${variant.image})` : "none" }}
+                      />
+                      {variantLabel(variant.attributes)}
+                    </div>
+                  ))}
               </div>
             </article>
           ))}
