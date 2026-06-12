@@ -1,0 +1,305 @@
+{
+  "categories": [
+    {
+      "title": "Catalog",
+      "handle": "catalog",
+      "products": [
+        {
+          "parent_product": {
+            "vater_id": "JTL-V-5001",
+            "title": "Essenzieller Kapuzenpullover",
+            "product_type": "hoodie",
+            "description": "Ein hochwertiger Hoodie fuer jeden Tag mit klarer Form und weicher Innenseite.",
+            "sku_prefix": "HOODIE-ESSENTIAL"
+          },
+          "child_variants": [
+            {
+              "kind_id": "JTL-K-5001",
+              "sku": "HOODIE-ESSENTIAL-BLACK",
+              "attributes": { "Color": "Black" },
+              "price": 69.99,
+              "child_image": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=900&q=80",
+              "child_gallery": [
+                "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1618354691792-d1d42acfd860?auto=format&fit=crop&w=1200&q=80"
+              ]
+            },
+            {
+              "kind_id": "JTL-K-5002",
+              "sku": "HOODIE-ESSENTIAL-GREY",
+              "attributes": { "Color": "Grey" },
+              "price": 69.99,
+              "child_image": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=900&q=80",
+              "child_gallery": [
+                "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1618354691792-d1d42acfd860?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=1200&q=80"
+              ]
+            },
+            {
+              "kind_id": "JTL-K-5003",
+              "sku": "HOODIE-ESSENTIAL-NAVY",
+              "attributes": { "Color": "Navy" },
+              "price": 69.99,
+              "child_image": "https://images.unsplash.com/photo-1618354691792-d1d42acfd860?auto=format&fit=crop&w=900&q=80",
+              "child_gallery": [
+                "https://images.unsplash.com/photo-1618354691792-d1d42acfd860?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=1200&q=80"
+              ]
+            },
+            {
+              "kind_id": "JTL-K-5004",
+              "sku": "HOODIE-ESSENTIAL-OLIVE",
+              "attributes": { "Color": "Olive" },
+              "price": 69.99,
+              "child_image": "https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=900&q=80",
+              "child_gallery": [
+                "https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=1200&q=80"
+              ]
+            }
+          ]
+        },
+        {
+          "parent_product": {
+            "vater_id": "JTL-V-5002",
+            "title": "Minimalistisches Alltags-T-Shirt",
+            "product_type": "tee",
+            "description": "Ein formstabiles Baumwoll-T-Shirt fuer den taeglichen Einsatz.",
+            "sku_prefix": "TEE-MINIMAL"
+          },
+          "child_variants": [
+            {
+              "kind_id": "JTL-K-5101",
+              "sku": "TEE-MINIMAL-WHITE",
+              "attributes": { "Color": "White" },
+              "price": 34.99,
+              "child_image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80",
+              "child_gallery": [
+                "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1574180566232-aaad1b5b8450?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=1200&q=80"
+              ]
+            },
+            {
+              "kind_id": "JTL-K-5102",
+              "sku": "TEE-MINIMAL-BLACK",
+              "attributes": { "Color": "Black" },
+              "price": 34.99,
+              "child_image": "https://images.unsplash.com/photo-1503342394128-c104d54dba01?auto=format&fit=crop&w=900&q=80",
+              "child_gallery": [
+                "https://images.unsplash.com/photo-1503342394128-c104d54dba01?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=80"
+              ]
+            },
+            {
+              "kind_id": "JTL-K-5103",
+              "sku": "TEE-MINIMAL-SAND",
+              "attributes": { "Color": "Sand" },
+              "price": 34.99,
+              "child_image": "https://images.unsplash.com/photo-1574180566232-aaad1b5b8450?auto=format&fit=crop&w=900&q=80",
+              "child_gallery": [
+                "https://images.unsplash.com/photo-1574180566232-aaad1b5b8450?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=1200&q=80"
+              ]
+            },
+            {
+              "kind_id": "JTL-K-5104",
+              "sku": "TEE-MINIMAL-OLIVE",
+              "attributes": { "Color": "Olive" },
+              "price": 34.99,
+              "child_image": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80",
+              "child_gallery": [
+                "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1574180566232-aaad1b5b8450?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=80"
+              ]
+            }
+          ]
+        },
+        {
+          "parent_product": {
+            "vater_id": "JTL-V-6001",
+            "title": "Klassischer Leder-Sneaker",
+            "product_type": "sneaker",
+            "description": "Ein eleganter Leder-Sneaker in Low-Top-Form mit angenehmer Daempfung.",
+            "sku_prefix": "SNEAKER-CLASSIC"
+          },
+          "child_variants": [
+            {
+              "kind_id": "JTL-K-6001",
+              "sku": "SNEAKER-CLASSIC-WHITE",
+              "attributes": { "Color": "White" },
+              "price": 119.99,
+              "child_image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=900&q=80",
+              "child_gallery": [
+                "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=1200&q=80"
+              ]
+            },
+            {
+              "kind_id": "JTL-K-6002",
+              "sku": "SNEAKER-CLASSIC-BLACK",
+              "attributes": { "Color": "Black" },
+              "price": 119.99,
+              "child_image": "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=900&q=80",
+              "child_gallery": [
+                "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80"
+              ]
+            },
+            {
+              "kind_id": "JTL-K-6003",
+              "sku": "SNEAKER-CLASSIC-TAN",
+              "attributes": { "Color": "Tan" },
+              "price": 119.99,
+              "child_image": "https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=900&q=80",
+              "child_gallery": [
+                "https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=1200&q=80"
+              ]
+            },
+            {
+              "kind_id": "JTL-K-6004",
+              "sku": "SNEAKER-CLASSIC-OLIVE",
+              "attributes": { "Color": "Olive" },
+              "price": 119.99,
+              "child_image": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=900&q=80",
+              "child_gallery": [
+                "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=1200&q=80"
+              ]
+            }
+          ]
+        },
+        {
+          "parent_product": {
+            "vater_id": "JTL-V-7001",
+            "title": "Leichter Performance Hoodie",
+            "product_type": "hoodie",
+            "description": "Ein leichter Kapuzenpullover fuer Alltag und Training mit glatter Aussenseite.",
+            "sku_prefix": "HOODIE-PERFORMANCE"
+          },
+          "child_variants": [
+            {
+              "kind_id": "JTL-K-7001",
+              "sku": "HOODIE-PERFORMANCE-BLUE",
+              "attributes": { "Color": "Blue" },
+              "price": 79.99,
+              "child_image": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=900&q=80",
+              "child_gallery": [
+                "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=1200&q=80"
+              ]
+            },
+            {
+              "kind_id": "JTL-K-7002",
+              "sku": "HOODIE-PERFORMANCE-RED",
+              "attributes": { "Color": "Red" },
+              "price": 79.99,
+              "child_image": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=900&q=80",
+              "child_gallery": [
+                "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=1200&q=80"
+              ]
+            },
+            {
+              "kind_id": "JTL-K-7003",
+              "sku": "HOODIE-PERFORMANCE-FOREST",
+              "attributes": { "Color": "Forest" },
+              "price": 79.99,
+              "child_image": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80",
+              "child_gallery": [
+                "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1200&q=80"
+              ]
+            },
+            {
+              "kind_id": "JTL-K-7004",
+              "sku": "HOODIE-PERFORMANCE-GREY",
+              "attributes": { "Color": "Grey" },
+              "price": 79.99,
+              "child_image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80",
+              "child_gallery": [
+                "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=1200&q=80"
+              ]
+            }
+          ]
+        },
+        {
+          "parent_product": {
+            "vater_id": "JTL-V-8001",
+            "title": "Retro Court Sneaker",
+            "product_type": "sneaker",
+            "description": "Ein sportlicher Retro-Sneaker mit weicher Sohle und klarer Seitenlinie.",
+            "sku_prefix": "SNEAKER-RETRO"
+          },
+          "child_variants": [
+            {
+              "kind_id": "JTL-K-8001",
+              "sku": "SNEAKER-RETRO-WHITE",
+              "attributes": { "Color": "White" },
+              "price": 129.99,
+              "child_image": "https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?auto=format&fit=crop&w=900&q=80",
+              "child_gallery": [
+                "https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80"
+              ]
+            },
+            {
+              "kind_id": "JTL-K-8002",
+              "sku": "SNEAKER-RETRO-BLACK",
+              "attributes": { "Color": "Black" },
+              "price": 129.99,
+              "child_image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80",
+              "child_gallery": [
+                "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=1200&q=80"
+              ]
+            },
+            {
+              "kind_id": "JTL-K-8003",
+              "sku": "SNEAKER-RETRO-RED",
+              "attributes": { "Color": "Red" },
+              "price": 129.99,
+              "child_image": "https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?auto=format&fit=crop&w=900&q=80",
+              "child_gallery": [
+                "https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?auto=format&fit=crop&w=1200&q=80"
+              ]
+            },
+            {
+              "kind_id": "JTL-K-8004",
+              "sku": "SNEAKER-RETRO-TAN",
+              "attributes": { "Color": "Tan" },
+              "price": 129.99,
+              "child_image": "https://images.unsplash.com/photo-1515347619252-60a4bf4fff4f?auto=format&fit=crop&w=900&q=80",
+              "child_gallery": [
+                "https://images.unsplash.com/photo-1515347619252-60a4bf4fff4f?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?auto=format&fit=crop&w=1200&q=80",
+                "https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?auto=format&fit=crop&w=1200&q=80"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

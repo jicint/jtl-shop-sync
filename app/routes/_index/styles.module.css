@@ -1,0 +1,274 @@
+.page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(255, 212, 163, 0.45), transparent 30%),
+    radial-gradient(circle at top right, rgba(165, 243, 252, 0.35), transparent 28%),
+    linear-gradient(180deg, #f8fafc 0%, #eef2ff 45%, #fffef8 100%);
+  color: #0f172a;
+  padding: 2rem;
+}
+
+.hero {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.9fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.heroCopy,
+.heroPanel,
+.stepCard,
+.productCard,
+.loginPanel {
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 24px;
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+}
+
+.heroCopy {
+  padding: 2rem;
+}
+
+.heroPanel {
+  padding: 1.25rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.eyebrow,
+.sectionEyebrow,
+.productMeta {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #b45309;
+}
+
+.heading {
+  margin: 0.7rem 0 0 0;
+  font-size: clamp(2.3rem, 5vw, 4.4rem);
+  line-height: 0.95;
+  max-width: 11ch;
+}
+
+.text {
+  margin: 1rem 0 0 0;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  max-width: 62ch;
+  color: #334155;
+}
+
+.badges,
+.actions,
+.productStats,
+.statGrid,
+.steps,
+.productGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.badges {
+  margin-top: 1.25rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.actions {
+  margin-top: 1.5rem;
+}
+
+.primaryAction,
+.secondaryAction,
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.85rem 1.2rem;
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.primaryAction,
+.button {
+  background: #0f172a;
+  color: #fff;
+}
+
+.secondaryAction {
+  background: transparent;
+  color: #0f172a;
+  border-color: #cbd5e1;
+}
+
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.statCard {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 1rem;
+  display: grid;
+  gap: 0.3rem;
+}
+
+.statCard span {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.statCard strong {
+  font-size: 1.8rem;
+}
+
+.storyCard {
+  background: linear-gradient(135deg, #fff7ed 0%, #eff6ff 100%);
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 1.2rem;
+}
+
+.storyTitle {
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.storyList {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: #334155;
+  line-height: 1.75;
+}
+
+.section {
+  max-width: 1180px;
+  margin: 1.5rem auto 0 auto;
+}
+
+.sectionHeader h2,
+.productCard h3 {
+  margin: 0.35rem 0 0 0;
+}
+
+.steps {
+  margin-top: 1rem;
+}
+
+.stepCard,
+.productCard,
+.loginPanel {
+  padding: 1.25rem;
+}
+
+.stepCard {
+  flex: 1 1 260px;
+}
+
+.stepCard p,
+.productCard p,
+.loginPanel p {
+  margin: 0.55rem 0 0 0;
+  color: #475569;
+  line-height: 1.7;
+}
+
+.productGrid {
+  margin-top: 1rem;
+}
+
+.productCard {
+  flex: 1 1 250px;
+}
+
+.productStats {
+  margin-top: 1rem;
+}
+
+.productStats span {
+  display: inline-flex;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+  font-size: 0.9rem;
+}
+
+.loginPanel {
+  margin-top: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  align-items: end;
+  margin-top: 1rem;
+}
+
+.label {
+  display: grid;
+  gap: 0.35rem;
+  min-width: min(100%, 360px);
+  color: #334155;
+  font-weight: 600;
+}
+
+.input {
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  padding: 0.85rem 1rem;
+  font: inherit;
+}
+
+@media only screen and (max-width: 860px) {
+  .page {
+    padding: 1rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .heading {
+    max-width: none;
+  }
+
+  .statGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .statGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .primaryAction,
+  .secondaryAction,
+  .button {
+    width: 100%;
+  }
+}
