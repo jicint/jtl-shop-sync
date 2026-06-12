@@ -252,6 +252,16 @@
   gap: 0.2rem;
 }
 
+.noticeCard {
+  margin-top: 0.9rem;
+  background: rgba(255, 247, 237, 0.9);
+  border: 1px solid #fed7aa;
+  color: #9a3412;
+  border-radius: 16px;
+  padding: 0.9rem 1rem;
+  line-height: 1.6;
+}
+
 .creditLabel {
   color: #64748b;
   font-size: 0.82rem;

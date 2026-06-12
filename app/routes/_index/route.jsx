@@ -249,6 +249,10 @@ export default function PublicIndex() {
           <div className={styles.creditLabel}>Built by</div>
           <div className={styles.creditText}>Jicin</div>
         </div>
+        <div className={styles.noticeCard}>
+          Hinweis: Der erste Aufruf der Demo kann kurz dauern, da der kostenlose Hosting-Service
+          nach Inaktivitaet automatisch in den Ruhemodus geht.
+        </div>
       </section>
 
     </main>
