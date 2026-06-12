@@ -1,6 +1,5 @@
 import { redirect, Form, useLoaderData } from "react-router";
 import { getJtlSyncOverview } from "../../jtlSync.server";
-import { login } from "../../shopify.server";
 import styles from "./styles.module.css";
 
 export const loader = async ({ request }) => {
@@ -14,7 +13,6 @@ export const loader = async ({ request }) => {
 
   return {
     overview,
-    showForm: Boolean(login),
   };
 };
 
@@ -28,7 +26,7 @@ function dataSourceLabel(value) {
 }
 
 export default function PublicIndex() {
-  const { overview, showForm } = useLoaderData();
+  const { overview } = useLoaderData();
   const featuredProducts = overview.sourceProducts.slice(0, 4);
 
   return (
@@ -148,18 +146,15 @@ export default function PublicIndex() {
             Die oeffentliche Startseite ist fuer Interviews gedacht. Der Shopify-embedded Bereich
             unter <code>/app</code> braucht weiterhin eine Shop-Installation und Authentifizierung.
           </p>
-
-          {showForm && (
-            <Form className={styles.form} method="post" action="/auth/login">
-              <label className={styles.label}>
-                <span>Shop domain</span>
-                <input className={styles.input} type="text" name="shop" placeholder="your-store.myshopify.com" />
-              </label>
-              <button className={styles.button} type="submit">
-                In Shopify anmelden
-              </button>
-            </Form>
-          )}
+          <Form className={styles.form} method="post" action="/auth/login">
+            <label className={styles.label}>
+              <span>Shop domain</span>
+              <input className={styles.input} type="text" name="shop" placeholder="your-store.myshopify.com" />
+            </label>
+            <button className={styles.button} type="submit">
+              In Shopify anmelden
+            </button>
+          </Form>
         </div>
       </section>
     </main>
