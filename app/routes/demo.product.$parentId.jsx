@@ -21,12 +21,16 @@ export const loader = async ({ params }) => {
               sku: product.child_variants[0].sku,
               price: product.child_variants[0].price,
               attributes: product.child_variants[0].attributes || {},
+              image: product.child_variants[0].child_image || "",
+              gallery: product.child_variants[0].child_gallery || [],
             }
           : null,
         variants: (product.child_variants || []).slice(1).map((variant) => ({
           sku: variant.sku,
           price: variant.price,
           attributes: variant.attributes || {},
+          image: variant.child_image || "",
+          gallery: variant.child_gallery || [],
         })),
       };
     }
@@ -154,7 +158,10 @@ export default function PublicProductDetail() {
           }}
         >
           <img
-            src={getVariantPreview(product.productType, product.title, product.mainVariant?.attributes || {})}
+            src={
+              product.mainVariant?.image ||
+              getVariantPreview(product.productType, product.title, product.mainVariant?.attributes || {})
+            }
             alt={product.title}
             style={{ width: "100%", borderRadius: "18px", display: "block", background: "#e2e8f0" }}
           />
