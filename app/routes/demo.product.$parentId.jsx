@@ -174,9 +174,11 @@ export default function PublicProductDetail() {
 
             <div style={{ marginTop: "1.2rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
               {[product.mainVariant, ...product.variants].filter(Boolean).map((variant) => (
-                <div
+                <Link
                   key={variant.sku}
+                  to={`/demo/variant/${encodeURIComponent(product.parentId)}/${encodeURIComponent(variant.sku)}`}
                   style={{
+                    textDecoration: "none",
                     display: "inline-flex",
                     alignItems: "center",
                     gap: "0.5rem",
@@ -198,7 +200,7 @@ export default function PublicProductDetail() {
                     }}
                   />
                   {getVariantDisplay(variant.attributes)}
-                </div>
+                </Link>
               ))}
             </div>
           </div>
