@@ -1,5 +1,154 @@
 import { loadJtlCatalog } from "./jtlCatalog.server.js";
 
+function mapShopifyVariantAttributes(selectedOptions = []) {
+  return Object.fromEntries((selectedOptions || []).map((option) => [option.name, option.value]));
+}
+
+function getShopifyVariantImage(variant, fallbackImage = "") {
+  return (
+    variant?.image?.url ||
+    fallbackImage ||
+    ""
+  );
+}
+
+function mapShopifyProductNode(product) {
+  const fallbackImage = product?.featuredMedia?.image?.url || "";
+  const variants = (product?.variants?.nodes || []).map((variant) => ({
+    sku: variant.sku || variant.id,
+    price: Number(variant.price || 0),
+    attributes: mapShopifyVariantAttributes(variant.selectedOptions),
+    image: getShopifyVariantImage(variant, fallbackImage),
+    gallery: [getShopifyVariantImage(variant, fallbackImage)].filter(Boolean),
+  }));
+
+  const [mainVariant, ...childVariants] = variants;
+
+  return {
+    category: product.productType || "Live Shopify Catalog",
+    title: product.title || "Untitled product",
+    productType: product.productType || "",
+    description: product.description || "",
+    skuPrefix: product.handle || "",
+    parentId: product.handle || product.id,
+    mainVariant: mainVariant
+      ? {
+          sku: mainVariant.sku,
+          price: mainVariant.price,
+          attributes: mainVariant.attributes || {},
+          image: mainVariant.image || "",
+          gallery: mainVariant.gallery || [],
+        }
+      : null,
+    variantCount: childVariants.length,
+    variants: childVariants,
+  };
+}
+
+async function fetchShopifyProducts(admin) {
+  const response = await admin.graphql(
+    `#graphql
+      query EmbeddedCatalogProducts {
+        products(first: 50, sortKey: UPDATED_AT, reverse: true) {
+          nodes {
+            id
+            handle
+            title
+            description
+            productType
+            featuredMedia {
+              ... on MediaImage {
+                image {
+                  url
+                }
+              }
+            }
+            variants(first: 20) {
+              nodes {
+                id
+                sku
+                price
+                selectedOptions {
+                  name
+                  value
+                }
+                image {
+                  url
+                }
+              }
+            }
+          }
+        }
+      }
+    `,
+  );
+
+  const json = await response.json();
+  return json?.data?.products?.nodes || [];
+}
+
+export async function getShopifySyncOverview(admin) {
+  const products = await fetchShopifyProducts(admin);
+  const sourceProducts = products.map(mapShopifyProductNode);
+
+  const grouped = new Map();
+  for (const product of sourceProducts) {
+    const key = product.category || "Live Shopify Catalog";
+    if (!grouped.has(key)) {
+      grouped.set(key, { title: key, productCount: 0, variantCount: 0, sampleProducts: [] });
+    }
+    const entry = grouped.get(key);
+    entry.productCount += 1;
+    entry.variantCount += product.variantCount;
+    if (entry.sampleProducts.length < 3) entry.sampleProducts.push(product.title);
+  }
+
+  return {
+    categoryCount: grouped.size || (sourceProducts.length > 0 ? 1 : 0),
+    productCount: sourceProducts.length,
+    variantCount: sourceProducts.reduce((count, product) => count + product.variantCount, 0),
+    imageCount: sourceProducts.reduce(
+      (count, product) => count + [product.mainVariant, ...product.variants].filter((variant) => Boolean(variant?.image)).length,
+      0,
+    ),
+    dataSource: "shopify-live",
+    previewCategories: Array.from(grouped.values()),
+    sourceProducts,
+  };
+}
+
+export async function getShopifyParentDetail(admin, handle) {
+  const products = await fetchShopifyProducts(admin);
+  const match = products.find((product) => (product.handle || product.id) === handle);
+  if (!match) return null;
+  return mapShopifyProductNode(match);
+}
+
+export async function getShopifyVariantDetail(admin, handle, sku) {
+  const products = await fetchShopifyProducts(admin);
+  const match = products.find((product) => (product.handle || product.id) === handle);
+  if (!match) return null;
+
+  const fallbackImage = match?.featuredMedia?.image?.url || "";
+  const variant = (match.variants?.nodes || []).find((entry) => (entry.sku || entry.id) === sku);
+  if (!variant) return null;
+
+  const image = getShopifyVariantImage(variant, fallbackImage);
+  return {
+    category: match.productType || "Live Shopify Catalog",
+    parentId: match.handle || match.id,
+    title: match.title || "Untitled product",
+    productType: match.productType || "",
+    description: match.description || "",
+    skuPrefix: match.handle || "",
+    sku: variant.sku || variant.id,
+    price: Number(variant.price || 0),
+    attributes: mapShopifyVariantAttributes(variant.selectedOptions),
+    image,
+    gallery: [image].filter(Boolean),
+  };
+}
+
 export async function getJtlCategories() {
   const parsed = await loadJtlCatalog();
   if (parsed?.categories) return parsed.categories;

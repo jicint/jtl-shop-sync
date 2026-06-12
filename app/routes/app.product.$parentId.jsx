@@ -1,12 +1,12 @@
 import { Link, useLoaderData, useRouteError } from "react-router";
 import { boundary } from "@shopify/shopify-app-react-router/server";
 import { authenticate } from "../shopify.server";
-import { getJtlParentDetail } from "../jtlSync.server";
+import { getShopifyParentDetail } from "../jtlSync.server";
 
 export const loader = async ({ request, params }) => {
-  await authenticate.admin(request);
+  const { admin } = await authenticate.admin(request);
 
-  const product = await getJtlParentDetail(params.parentId);
+  const product = await getShopifyParentDetail(admin, params.parentId);
   if (!product) {
     throw new Response("Produkt nicht gefunden", { status: 404 });
   }

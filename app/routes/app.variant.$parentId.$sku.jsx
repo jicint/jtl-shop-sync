@@ -1,12 +1,12 @@
 import { useLoaderData, useRouteError } from "react-router";
 import { boundary } from "@shopify/shopify-app-react-router/server";
 import { authenticate } from "../shopify.server";
-import { getJtlVariantDetail } from "../jtlSync.server";
+import { getShopifyVariantDetail } from "../jtlSync.server";
 
 export const loader = async ({ request, params }) => {
-  await authenticate.admin(request);
+  const { admin } = await authenticate.admin(request);
 
-  const variant = await getJtlVariantDetail(params.parentId, params.sku);
+  const variant = await getShopifyVariantDetail(admin, params.parentId, params.sku);
   if (!variant) {
     throw new Response("Variante nicht gefunden", { status: 404 });
   }

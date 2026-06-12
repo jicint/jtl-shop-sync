@@ -1,11 +1,11 @@
 import { Link, useLoaderData, useRouteError } from "react-router";
 import { boundary } from "@shopify/shopify-app-react-router/server";
 import { authenticate } from "../shopify.server";
-import { getJtlSyncOverview } from "../jtlSync.server";
+import { getShopifySyncOverview } from "../jtlSync.server";
 
 export const loader = async ({ request }) => {
-  await authenticate.admin(request);
-  return await getJtlSyncOverview();
+  const { admin } = await authenticate.admin(request);
+  return await getShopifySyncOverview(admin);
 };
 
 function statCard(label, value) {
@@ -29,6 +29,7 @@ function getDataSourceLabel(value) {
     "local-jtl-db": "Lokale JTL DB",
     "sample-json": "Beispiel JSON",
     "real-jtl-db": "Reale JTL DB",
+    "shopify-live": "Live Shopify Shop",
     unknown: "Unbekannt",
   }[value] || value;
 }
