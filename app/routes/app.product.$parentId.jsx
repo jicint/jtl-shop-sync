@@ -272,6 +272,41 @@ export default function ParentProductDetail() {
             </Link>
           ))}
         </div>
+
+        {product.variants.length > 0 && (
+          <div style={{ marginTop: "1rem", display: "flex", gap: "0.65rem", flexWrap: "wrap" }}>
+            {product.variants.map((variant) => (
+              <Link
+                key={`chip-${variant.sku}`}
+                to={`/app/variant/${encodeURIComponent(product.parentId)}/${encodeURIComponent(variant.sku)}`}
+                style={{
+                  textDecoration: "none",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
+                  padding: "0.5rem 0.8rem",
+                  borderRadius: "999px",
+                  background: "#ffffff",
+                  border: "1px solid #cbd5e1",
+                  color: "#0f172a",
+                  fontWeight: 700,
+                }}
+              >
+                <span
+                  style={{
+                    width: "0.85rem",
+                    height: "0.85rem",
+                    borderRadius: "999px",
+                    background: getVariantSwatch(variant.attributes),
+                    border: "1px solid rgba(15, 23, 42, 0.12)",
+                    display: "inline-block",
+                  }}
+                />
+                {getVariantDisplay(variant.attributes)}
+              </Link>
+            ))}
+          </div>
+        )}
       </s-section>
     </s-page>
   );
